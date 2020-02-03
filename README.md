@@ -2,7 +2,7 @@
 
 ## Description
 
-This app will connect to NASA API through endpoints provided by RapidAPI.com and retrieve data, which includes daily data for near Earth asteroids. With this app, you can check the closest asteroid to Earth and its statistics on any given date. Alternatively, NASA uploads beautiful pictures every day, and their Picture of the Day can also be accessed through the API's, so this app will also be able to pull up any particular date's picture of the day.
+This app will connect to NASA API through endpoints provided by RapidAPI.com and retrieve data, which includes daily data for near Earth asteroids. With this app, you can check the closest asteroid to Earth and its statistics on any given date. Alternatively, NASA uploads beautiful pictures every day, and their Picture of the Dayc pictures and other epi can also be accessed through the API's, so this app will also be able to pull up any particular date's picture of the day (or other, possibly random, picture that NASA uploaded that day).
 
 ## Wireframes
 
