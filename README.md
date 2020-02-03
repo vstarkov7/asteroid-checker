@@ -6,9 +6,9 @@ This app will connect to NASA API through endpoints provided by RapidAPI.com and
 
 ## Wireframes
 
-!(First Wireframe Image)[https://i.imgur.com/oMV47Dj.jpg]
+![First Wireframe Image](https://i.imgur.com/oMV47Dj.jpg)
 
-!(Second Wireframe Image)[https://i.imgur.com/5YP18in.jpg]
+![Second Wireframe Image](https://i.imgur.com/5YP18in.jpg)
 
 ## API
 
