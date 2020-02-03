@@ -10,6 +10,8 @@ This app will connect to NASA API through endpoints provided by RapidAPI.com and
 
 ![Second Wireframe Image](https://i.imgur.com/5YP18in.jpg)
 
+![Mobile View Wireframe Image](https://i.imgur.com/O8TV5rk.jpg)
+
 ## API
 
 I will be using NASA API with endpoints provided by RapidAPI website. Here is an example https://rapidapi.com/dimas/api/NasaAPI?endpoint=apiendpoint_b4e69440-f966-11e7-809f-87f99bda0814getClosestAsteroids
