@@ -1,3 +1,34 @@
+.main_title {
+  display: flex;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 400;
+  flex-direction: column;
+  align-items: center;
+}
+.main_title img {
+  width: 20%;
+}
+.main_title div {
+  margin-top: 5px;
+}
+nav {
+  margin: 20px 0;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+  padding-bottom: 20px;
+}
+nav a{
+  text-decoration: none;
+  font-size: 28px;
+  margin: 0 40px;
+}
+nav a:hover{
+  color: black;
+  text-decoration: underline;
+}
 .explanation {
   text-align: justify;
   margin: 0 auto;
@@ -10,14 +41,21 @@
   margin: 20px 0;
   width: 80%;
 }
-.asteroid_container {
-
+#asteroid_container {
+  text-align: justify;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  align-content: baseline;
+  display: flex;
 }
 .individual_asteroid_container {
-
+  margin: 15px 0;
+  width: 315px;
 }
 .specific_asteroid_info {
-
+  margin-bottom: 5px;
 }
 .hazardous {
   display: inline-block;
@@ -25,11 +63,69 @@
   font-weight: bold;
 }
 .input_date_text {
-  text-align: justify;
+  text-align: center;
   margin: 0 auto;
   width: 60%;
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding-top: 20px;
 }
-#asteroid_input_date{
+#asteroid_input_date {
+  text-align: center;
+}
+  /* -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	background-color: #2CBBBB;
+	border: 1px solid #27A0A0;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+  text-transform: uppercase; */
+
+  /* background: #EB3B88; */
+  input {
+	border: 1px solid #C94A81;
+	padding: 5px 15px 5px 15px;
+	/* color: #FFCBE2; */
+	box-shadow: inset -1px -1px 3px #FF62A7;
+	-moz-box-shadow: inset -1px -1px 3px #FF62A7;
+	-webkit-box-shadow: inset -1px -1px 3px #FF62A7;
+	border-radius: 3px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;	
+  font-weight: bold;
+  font-size: 1em;
+}
+button {
+  font-size: 18px;
+  width: 218px;
+  -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	box-shadow: inset 0px 1px 0px 0px #3985B1;
+	background-color: #216288;
+	border: 1px solid #17445E;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	padding: 8px 18px;
+	text-decoration: none;
+  font: 12px Arial, Helvetica, sans-serif;
+  border-radius: 30px;
+}
+button:hover{
+  background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: #28739E;
+}
+.input_form button {
+  font-size: 15px;
+}
+#pic_input_date {
   text-align: center;
 }
 /* form {
@@ -44,18 +140,17 @@
 
 .input_form {
   display: flex;
-  display: flex;
   flex-direction: column;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   align-content: baseline;
+  margin-bottom: 20px;
 }
 
 .input_form button {
-
 }
 
 .input_form input {
-  
+  margin-bottom: 20px;
 }

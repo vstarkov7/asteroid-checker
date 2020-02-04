@@ -34,12 +34,7 @@ buttonAsteroids.addEventListener('click', async (event) => {
       if (hazardous) {
         hazardousValue = `Hazardous`
 
-        asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-    <div class="specific_asteroid_info">Name: ${name}</div>
-    <div class="specific_asteroid_info">Diameter: ${diameter} kilometers</div>
-    <div class="specific_asteroid_info">Miss Distance: ${distance} kilometers</div>
-    <div class="specific_asteroid_info">Potentially hazardous? <div class="hazardous">${hazardousValue}</div></div>
-  </div>`
+        asteroidContainer.innerHTML += `<div class="individual_asteroid_container"><div class="specific_asteroid_info">Name: ${name}</div><div class="specific_asteroid_info">Diameter: ${diameter} kilometers</div><div class="specific_asteroid_info">Miss Distance: ${distance} kilometers</div><div class="specific_asteroid_info">Potentially hazardous? <div class="hazardous">${hazardousValue}</div></div></div>`
       }
       else {
         hazardousValue = `Not hazardous`
