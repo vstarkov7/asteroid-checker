@@ -3,6 +3,8 @@ const API_KEY = 'x2jCKgixJAakYYz6lUItiiDx4V8MZMvGR5SGzmNn'
 const START_DATE = '2018-12-12'
 const END_DATE = '2018-12-16'
 const buttonPic = document.querySelector('#pic_day');
+const buttonAsteroids = document.querySelector('#check_asteroids')
+const picContainer = document.querySelector('#pic_of_day_container')
 
 const REQUEST_URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}&api_key=${API_KEY}`
 
@@ -43,4 +45,9 @@ buttonPic.addEventListener('click', async () => {
   let response = await axios.get(PIC_REQUEST_URL);
   let sampleData = response.data;
   console.log(sampleData)
+  let pictureLink = response.data.hdurl;
+  let pictureExplanation = response.data.explanation
+  picContainer.innerHTML = `<img alt="NASA's picture of the day for ${DATE}" src="${pictureLink}"></img>
+  <div class="explanation">${pictureExplanation}</div>`
 });
+

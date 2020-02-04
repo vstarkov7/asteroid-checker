@@ -8,8 +8,9 @@ const button = document.querySelector('button');
 // const movieNameDiv = document.querySelector(".movie-name")
 // const moviePosterDiv = document.querySelector(".movie-poster")
 
-button.addEventListener("click", async () => {
+button.addEventListener("click", async (event) => {
   // const categoryId = SELECT[SELECT.selectedIndex].id;
+  event.preventDefault()
   try {
     let response = await axios.post(`${BASE_URL}`,
       {

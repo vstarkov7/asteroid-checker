@@ -1,0 +1,61 @@
+.explanation {
+  text-align: justify;
+  margin: 0 auto;
+  width: 90%;
+}
+#pic_of_day_container {
+  text-align: center;
+}
+#pic_of_day_container img{
+  margin: 20px 0;
+  width: 80%;
+}
+.asteroid_container {
+
+}
+.individual_asteroid_container {
+
+}
+.specific_asteroid_info {
+
+}
+.hazardous {
+  display: inline-block;
+  color: red;
+  font-weight: bold;
+}
+.input_date_text {
+  text-align: justify;
+  margin: 0 auto;
+  width: 60%;
+}
+#asteroid_input_date{
+  text-align: center;
+}
+/* form {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  align-content: baseline;
+} */
+
+.input_form {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  align-content: baseline;
+}
+
+.input_form button {
+
+}
+
+.input_form input {
+  
+}

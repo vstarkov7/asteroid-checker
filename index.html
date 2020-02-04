@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script defer src="js/main2.js" charset="utf-8"></script>
+  <script defer src="js/main4.js" charset="utf-8"></script>
   <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
   <title>Asteroid Checker</title>
 </head>
@@ -16,11 +16,18 @@
 
   </header>
   <main>
-    <!-- <form>
-      <label for="fname">Date</label>
-      <input type="text" id="desiredDate" name="desiredDate" placeholder="MM/DD/YYYY"> -->
-    <button>Click me!</button>
-    <!-- </form> -->
+    <div class="input_date_text">
+      Please enter a date to view statistics for closest Near Earth asteroids on that day.
+    </div>
+    <form class="input_form">
+      <input id="asteroid_input_date" placeholder="YYYY-MM-DD"></input>
+      <button id="check_asteroids">Check asteroids!</button>
+    </form>
+
+    <div id="asteroid_container">
+
+    </div>
+    </div>
   </main>
   <footer>
 
@@ -28,3 +35,13 @@
 </body>
 
 </html>
+
+<!-- <div class="individual_asteroid_container">
+        <div class="specific_asteroid_info">Name:</div>
+        <div class="specific_asteroid_info">Diameter:</div>
+        <div class="specific_asteroid_info">Miss Distance:</div>
+        <div class="specific_asteroid_info">Potentially hazardous?</div> -->
+
+<!-- <form>
+      <label for="fname">Date</label>
+      <input type="text" id="desiredDate" name="desiredDate" placeholder="MM/DD/YYYY"> -->
