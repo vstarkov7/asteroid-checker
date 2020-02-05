@@ -1,16 +1,30 @@
+header {
+  background-image: url("../img/asteroid4_3.jpg");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+} 
 .main_title {
+  /* color: #2B3F98; */
+  /* color: rgb(227, 227, 227); */
+  /* color: rgb(245, 164, 164); */
+  font-family: 'Catamaran', sans-serif;
+  color: white;
   display: flex;
   text-align: center;
-  font-size: 26px;
-  font-weight: 400;
+  font-size: 32px;
+  font-weight: 600;
   flex-direction: column;
   align-items: center;
 }
 .main_title img {
   width: 20%;
 }
-.main_title div {
+/* .main_title div {
   margin-top: 5px;
+} */
+.subtitle {
+  font-size: 24px;
+  margin-top: -5px;
 }
 nav {
   margin: 20px 0;
@@ -21,13 +35,26 @@ nav {
   padding-bottom: 20px;
 }
 nav a{
+  font-family: 'Catamaran', sans-serif;
+  color: white;
+  /* color: rgb(227, 227, 227); */
+  /* color: white; */
   text-decoration: none;
   font-size: 28px;
   margin: 0 40px;
 }
 nav a:hover{
-  color: black;
+  /* color: black; */
+  color: white;
   text-decoration: underline;
+}
+body {
+  margin: 0;
+}
+body {
+  /* background-color: #95B8D1; */
+  /* background-color: #B1DBF9; */
+  background-color: #D5E8F6;
 }
 .explanation {
   text-align: justify;
@@ -51,7 +78,12 @@ nav a:hover{
   display: flex;
 }
 .individual_asteroid_container {
-  background-color: rgb(240, 239, 239);
+  /* background-color: rgb(240, 239, 239); */
+  /* background-color: #E8DDB5; */
+  /* background-color: #D7D9D7; */
+  /* background-color: #205DAC; */
+  color: #FFE2EB;
+  background-color: #1C4972;
   margin: 15px 0;
   display: flex;
   flex-flow: row;
@@ -74,9 +106,13 @@ nav a:hover{
   border-radius: 20px;
 }
 .specific_asteroid_info {
+  /* font-family: 'Alegreya Sans', sans-serif; */
+  text-align: left;
+  font-family: 'Graduate', cursive;
   margin-bottom: 5px;
 }
 .photo_caption {
+  font-family: 'Alegreya Sans', sans-serif;
   margin-top: 20px;
   text-align: center;
 }
@@ -86,6 +122,7 @@ nav a:hover{
   font-weight: bold;
 }
 .input_date_text {
+  font-family: 'Alegreya Sans', sans-serif;
   text-align: center;
   margin: 0 auto;
   width: 60%;
@@ -131,7 +168,9 @@ button {
   -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
 	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
 	box-shadow: inset 0px 1px 0px 0px #3985B1;
-	background-color: #216288;
+  /* background-color: #216288; */
+  /* background-color: #205DAC; */
+  background-color: #1C4972;
 	border: 1px solid #17445E;
 	display: inline-block;
 	cursor: pointer;
