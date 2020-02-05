@@ -9,7 +9,6 @@ const asteroidContainer = document.querySelector('#asteroid_container')
 
 const REQUEST_URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}&api_key=${API_KEY}`
 
-
 const ASTEROID_BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed?'
 const asteroidInputDate = document.querySelector('#asteroid_input_date')
 
@@ -43,11 +42,11 @@ buttonAsteroids.addEventListener('click', async (event) => {
 
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameterDisplay} km
+            <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+            <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
             </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distanceDisplay} km</div>
-            <div class="specific_asteroid_info">Danger Level: <div class="hazardous">${hazardousValue}</div>
+            <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+            <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
             </div>
           </div>
           <div class="diameter_container">
@@ -58,11 +57,11 @@ buttonAsteroids.addEventListener('click', async (event) => {
           hazardousValue = `Not hazardous`
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameterDisplay} km
+            <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+            <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
             </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distanceDisplay} km</div>
-            <div class="specific_asteroid_info">Danger Level: ${hazardousValue}
+            <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+            <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
             </div>
           </div>
           <div class="diameter_container">
@@ -77,16 +76,16 @@ buttonAsteroids.addEventListener('click', async (event) => {
         <div class="photo_caption">This asteroid is roughly ${ratioPercentage}% the size of the LAX airport</div>`
         let hazardous = asteroidData[i].is_potentially_hazardous_asteroid
         if (hazardous) {
-          hazardousValue = `Hazardous`
+          hazardousValue = `Potentially hazardous`
 
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameterDisplay} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distanceDisplay} km</div>
-            <div class="specific_asteroid_info">Danger Level: <div class="hazardous">${hazardousValue}</div>
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
           ${insertPicture}
@@ -96,12 +95,12 @@ buttonAsteroids.addEventListener('click', async (event) => {
           hazardousValue = `Not hazardous`
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameterDisplay} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distanceDisplay} km</div>
-            <div class="specific_asteroid_info">Danger Level: ${hazardousValue}
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
             ${insertPicture}
@@ -115,16 +114,16 @@ buttonAsteroids.addEventListener('click', async (event) => {
         <div class="photo_caption">This asteroid is roughly ${ratioPercentage}% the size of Central Park</div>`
         let hazardous = asteroidData[i].is_potentially_hazardous_asteroid
         if (hazardous) {
-          hazardousValue = `Hazardous`
+          hazardousValue = `Potentially hazardous`
 
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameterDisplay} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distanceDisplay} km</div>
-            <div class="specific_asteroid_info">Danger Level: <div class="hazardous">${hazardousValue}</div>
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
           ${insertPicture}
@@ -134,12 +133,12 @@ buttonAsteroids.addEventListener('click', async (event) => {
           hazardousValue = `Not hazardous`
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameterDisplay} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distanceDisplay} km</div>
-            <div class="specific_asteroid_info">Danger Level: ${hazardousValue}
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
             ${insertPicture}
@@ -153,16 +152,16 @@ buttonAsteroids.addEventListener('click', async (event) => {
         <div class="photo_caption">This asteroid is roughly ${ratioPercentage}% the size of Vatican City</div>`
         let hazardous = asteroidData[i].is_potentially_hazardous_asteroid
         if (hazardous) {
-          hazardousValue = `Hazardous`
+          hazardousValue = `Potentially hazardous`
 
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameterDisplay} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distanceDisplay} km</div>
-            <div class="specific_asteroid_info">Danger Level: <div class="hazardous">${hazardousValue}</div>
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
           ${insertPicture}
@@ -172,12 +171,12 @@ buttonAsteroids.addEventListener('click', async (event) => {
           hazardousValue = `Not hazardous`
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameterDisplay} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distanceDisplay} km</div>
-            <div class="specific_asteroid_info">Danger Level: ${hazardousValue}
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
             ${insertPicture}
@@ -191,16 +190,16 @@ buttonAsteroids.addEventListener('click', async (event) => {
         <div class="photo_caption">This asteroid is roughly ${ratioPercentage}% the size of a Manhattan city block</div>`
         let hazardous = asteroidData[i].is_potentially_hazardous_asteroid
         if (hazardous) {
-          hazardousValue = `Hazardous`
+          hazardousValue = `Potentially hazardous`
 
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameter.toFixed(3)} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distance.toFixed(3)} km</div>
-            <div class="specific_asteroid_info">Danger Level: <div class="hazardous">${hazardousValue}</div>
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
           ${insertPicture}
@@ -210,12 +209,12 @@ buttonAsteroids.addEventListener('click', async (event) => {
           hazardousValue = `Not hazardous`
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameter.toFixed(3)} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distance.toFixed(3)} km</div>
-            <div class="specific_asteroid_info">Danger Level: ${hazardousValue}
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
             ${insertPicture}
@@ -229,16 +228,16 @@ buttonAsteroids.addEventListener('click', async (event) => {
         <div class="photo_caption">This asteroid is roughly ${ratioPercentage}% the size of a football NFL field</div>`
         let hazardous = asteroidData[i].is_potentially_hazardous_asteroid
         if (hazardous) {
-          hazardousValue = `Hazardous`
+          hazardousValue = `Potentially hazardous`
 
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameter.toFixed(3)} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distance.toFixed(3)} km</div>
-            <div class="specific_asteroid_info">Danger Level: <div class="hazardous">${hazardousValue}</div>
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
           ${insertPicture}
@@ -248,12 +247,12 @@ buttonAsteroids.addEventListener('click', async (event) => {
           hazardousValue = `Not hazardous`
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameter.toFixed(3)} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distance.toFixed(3)} km</div>
-            <div class="specific_asteroid_info">Danger Level: ${hazardousValue}
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
             ${insertPicture}
@@ -267,16 +266,16 @@ buttonAsteroids.addEventListener('click', async (event) => {
         <div class="photo_caption">This asteroid is roughly ${ratioPercentage}% the size of an ice hockey rink</div>`
         let hazardous = asteroidData[i].is_potentially_hazardous_asteroid
         if (hazardous) {
-          hazardousValue = `Hazardous`
+          hazardousValue = `Potentially hazardous`
 
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameter.toFixed(3)} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distance.toFixed(3)} km</div>
-            <div class="specific_asteroid_info">Danger Level: <div class="hazardous">${hazardousValue}</div>
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
           ${insertPicture}
@@ -286,12 +285,12 @@ buttonAsteroids.addEventListener('click', async (event) => {
           hazardousValue = `Not hazardous`
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameter.toFixed(3)} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distance.toFixed(3)} km</div>
-            <div class="specific_asteroid_info">Danger Level: ${hazardousValue}
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
             ${insertPicture}
@@ -305,16 +304,16 @@ buttonAsteroids.addEventListener('click', async (event) => {
         <div class="photo_caption">This asteroid is roughly ${ratioPercentage}% the size of an IMAX theater screen</div>`
         let hazardous = asteroidData[i].is_potentially_hazardous_asteroid
         if (hazardous) {
-          hazardousValue = `Hazardous`
+          hazardousValue = `Potentially hazardous`
 
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameter.toFixed(3)} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distance.toFixed(3)} km</div>
-            <div class="specific_asteroid_info">Danger Level: <div class="hazardous">${hazardousValue}</div>
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
           ${insertPicture}
@@ -324,12 +323,12 @@ buttonAsteroids.addEventListener('click', async (event) => {
           hazardousValue = `Not hazardous`
           asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
           <div class="text_statistics">
-            <div class="specific_asteroid_info">Name: ${name}</div>
-            <div class="specific_asteroid_info">Avg Diameter: ${diameter.toFixed(3)} km
-            </div>
-            <div class="specific_asteroid_info">Miss Distance: ${distance.toFixed(3)} km</div>
-            <div class="specific_asteroid_info">Danger Level: ${hazardousValue}
-            </div>
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
+          </div>
           </div>
           <div class="diameter_container">
             ${insertPicture}

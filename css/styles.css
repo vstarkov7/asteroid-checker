@@ -216,3 +216,17 @@ button:hover{
 .input_form input {
   margin-bottom: 20px;
 }
+
+.animation_test {
+  position: relative;
+  height: 1000px;
+  width: 100%;
+}
+.test_image {
+  position: absolute;
+  top: 0;
+  right: 500;
+}
+.test_image img{
+  width: 200px;
+}
