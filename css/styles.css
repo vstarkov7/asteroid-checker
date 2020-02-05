@@ -51,11 +51,34 @@ nav a:hover{
   display: flex;
 }
 .individual_asteroid_container {
+  background-color: rgb(240, 239, 239);
   margin: 15px 0;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 30px;
+  border-radius: 20px;
+}
+.text_statistics {
   width: 315px;
+}
+.diameter_container {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  width: 300px;
+}
+.diameter_container img{
+  width: 220px;
+  border-radius: 20px;
 }
 .specific_asteroid_info {
   margin-bottom: 5px;
+}
+.photo_caption {
+  margin-top: 20px;
+  text-align: center;
 }
 .hazardous {
   display: inline-block;

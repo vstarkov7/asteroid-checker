@@ -30,21 +30,76 @@ buttonAsteroids.addEventListener('click', async (event) => {
       let name = asteroidData[i].name
       let diameter = (asteroidData[i].estimated_diameter.kilometers.estimated_diameter_max + asteroidData[i].estimated_diameter.kilometers.estimated_diameter_min) / 2
       let distance = asteroidData[i].close_approach_data[0].miss_distance.kilometers
+      let estArea = Math.PI * Math.pow(diameter / 2, 2)
+      console.log(estArea)
+      if (estArea > 14) {
+        let insertPicture = `<img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+        <div class="photo_caption">This asteroid is roughly 78% the size of Manhattan</div>`
+      }
+      else if (estArea > 7) {
+        let insertPicture = `<img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+        <div class="photo_caption">This asteroid is roughly 78% the size of the LAX airport</div>`
+      }
+      else if (estArea > 1) {
+        let insertPicture = `<img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+        <div class="photo_caption">This asteroid is roughly 78% the size of Central Park</div>`
+      }
+      else if (estArea > 0.05) {
+        let insertPicture = `<img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+        <div class="photo_caption">This asteroid is roughly 78% the size of Vatican City</div>`
+      }
+      else if (estArea > 0.005351215104) {
+        let insertPicture = `<img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+        <div class="photo_caption">This asteroid is roughly 78% the size of a Manhattan city block</div>`
+      }
+      else if (estArea > 0.003) {
+        let insertPicture = `<img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+        <div class="photo_caption">This asteroid is roughly 78% the size of a football NFL field</div>`
+      }
+      else if (estArea > 0.0005) {
+        let insertPicture = `<img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+        <div class="photo_caption">This asteroid is roughly 78% the size of an ice hockey rink</div>`
+      }
+      else {
+        let insertPicture = `<img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+        <div class="photo_caption">This asteroid is roughly 78% the size of an IMAX theater screen</div>`
+      }
       let hazardous = asteroidData[i].is_potentially_hazardous_asteroid
       if (hazardous) {
         hazardousValue = `Hazardous`
 
-        asteroidContainer.innerHTML += `<div class="individual_asteroid_container"><div class="specific_asteroid_info">Name: ${name}</div><div class="specific_asteroid_info">Diameter: ${diameter} kilometers</div><div class="specific_asteroid_info">Miss Distance: ${distance} kilometers</div><div class="specific_asteroid_info">Potentially hazardous? <div class="hazardous">${hazardousValue}</div></div></div>`
-      }
+        asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
+        <div class="text_statistics">
+          <div class="specific_asteroid_info">Name: ${name}</div>
+          <div class="specific_asteroid_info">Diameter: ${diameter} kilometers
+          </div>
+          <div class="specific_asteroid_info">Miss Distance: ${distance} kilometers</div>
+          <div class="specific_asteroid_info">Potentially hazardous? <div class="hazardous">${hazardousValue}</div>
+          </div>
+        </div>
+        <div class="diameter_container">
+        ${insertPicture}
+        // <img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+        // <div class="photo_caption">This asteroid is roughly 78% the size of Manhattan</div>
+        </div>
+      </div>`      }
       else {
         hazardousValue = `Not hazardous`
-
         asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-    <div class="specific_asteroid_info">Name: ${name}</div>
-    <div class="specific_asteroid_info">Diameter: ${diameter} kilometers</div>
-    <div class="specific_asteroid_info">Miss Distance: ${distance} kilometers</div>
-    <div class="specific_asteroid_info">Potentially hazardous? ${hazardousValue}</div>
-  </div>`
+        <div class="text_statistics">
+          <div class="specific_asteroid_info">Name: ${name}</div>
+          <div class="specific_asteroid_info">Diameter: ${diameter} kilometers
+          </div>
+          <div class="specific_asteroid_info">Miss Distance: ${distance} kilometers</div>
+          <div class="specific_asteroid_info">Potentially hazardous? ${hazardousValue}
+          </div>
+        </div>
+        <div class="diameter_container">
+          ${insertPicture}
+          // <img alt="Photo of Manhattan" src="./img/manhattan.jpg">
+          // <div class="photo_caption">This asteroid is roughly 78% the size of Manhattan</div>
+        </div>
+      </div>`
       }
     }
   }
