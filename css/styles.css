@@ -255,7 +255,10 @@ button:hover{
   display: inline-block;
   color: cyan;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  #pic_of_day_container img{
+    width: 85%;
+  }
   .text_statistics {
   margin-bottom: 20px;
   }
@@ -268,7 +271,7 @@ button:hover{
 }
 @media (max-width: 480px) {
   #pic_of_day_container img{
-    width: 95%;
+    width: 90%;
   }
   .flying_asteroid img{
     width: 250px;
