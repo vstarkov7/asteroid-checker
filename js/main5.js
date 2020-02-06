@@ -1,23 +1,10 @@
-// function clearAsteroid() {
-//   let asteroid = document.getElementById("asteroid");
-//   asteroid.style.opacity = 0;
-//   asteroid.style.top = 0;
-//   asteroid.style.right = 0;
-//   let id = setInterval(frame, 5)
-//   clearInterval(id)
-// }
-// let asteroid = document.body.createElement(div).setAttribute("id", "asteroid").setAttribute("class", "flying_asteroid")
-// let asteroid = document.getElementById("asteroid");
-// asteroid.innerHTML = `<img src="./img/asteroid3.png">`
-// function clearAsteroid() {
-//   let toRemove = document.querySelector('#asteroid')
-//   toRemove.parentNode.removeChild(toRemove)
-// }
-// function createAsteroid() {
-//   let asteroid = document.body.createElement('div').setAttribute("id", "asteroid").setAttribute("class", "flying_asteroid")
-//   asteroid.innerHTML = `<img src="./img/asteroid3.png">`
-//   document.body.appendChild(asteroid);
-// }
+const BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed?';
+const API_KEY = 'x2jCKgixJAakYYz6lUItiiDx4V8MZMvGR5SGzmNn'
+const buttonAsteroids = document.querySelector('#check_asteroids')
+const asteroidContainer = document.querySelector('#asteroid_container')
+const asteroidInput = document.querySelector('#asteroid_input_date')
+const ASTEROID_BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed?'
+const asteroidInputDate = document.querySelector('#asteroid_input_date')
 let pos = 0;
 document.querySelector("#asteroid").style.opacity = 0;
 function flyAsteroid() {
@@ -46,22 +33,16 @@ function isValidDate(dateString) {
   if (!dNum && dNum !== 0) return false; // NaN value, Invalid date
   return d.toISOString().slice(0, 10) === dateString;
 }
-const BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed?';
-const API_KEY = 'x2jCKgixJAakYYz6lUItiiDx4V8MZMvGR5SGzmNn'
-const START_DATE = '2018-12-12'
-const END_DATE = '2018-12-16'
-const buttonPic = document.querySelector('#pic_day');
-const buttonAsteroids = document.querySelector('#check_asteroids')
-const picContainer = document.querySelector('#pic_of_day_container')
-const asteroidContainer = document.querySelector('#asteroid_container')
 
-const REQUEST_URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}&api_key=${API_KEY}`
-
-const ASTEROID_BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed?'
-const asteroidInputDate = document.querySelector('#asteroid_input_date')
-
+asteroidInput.addEventListener('keyup', function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault()
+    buttonAsteroids.click();
+  }
+})
 buttonAsteroids.addEventListener('click', async (event) => {
   event.preventDefault()
+  asteroidContainer.innerHTML = '';
   const DATE = asteroidInputDate.value;
   if (!isValidDate(DATE)) {
     document.querySelector(".input_date_error").style.opacity = '1'
@@ -72,7 +53,6 @@ buttonAsteroids.addEventListener('click', async (event) => {
     if (document.querySelector("#asteroid").style.opacity === "0") {
       flyAsteroid();
     }
-    // const DATE = asteroidInputDate.value;
     const ASTEROID_REQUEST_URL = `${ASTEROID_BASE_URL}start_date=${DATE}&end_date=${DATE}&api_key=${API_KEY}`
     let response = await axios.get(ASTEROID_REQUEST_URL);
     let sampleData = response.data;
@@ -81,7 +61,6 @@ buttonAsteroids.addEventListener('click', async (event) => {
     console.log(hazardous_check)
     console.log(asteroidData)
     console.log(sampleData)
-    asteroidContainer.innerHTML = '';
     for (let i = 0; i < asteroidData.length; i++) {
       let name = asteroidData[i].name
       let diameter = (asteroidData[i].estimated_diameter.kilometers.estimated_diameter_max + asteroidData[i].estimated_diameter.kilometers.estimated_diameter_min) / 2
@@ -401,11 +380,3 @@ buttonAsteroids.addEventListener('click', async (event) => {
     console.log(error)
   }
 });
-
-  // let pictureLink = response.data.hdurl;
-  // let pictureExplanation = response.data.explanation
-  // picContainer.innerHTML = `<img alt="NASA's picture of the day for ${DATE}" src="${pictureLink}"></img>
-  // <div class="explanation">${pictureExplanation}</div>`
-
-    // event.preventDefault
-  // event.stopImmediatePropagation()
