@@ -23,8 +23,6 @@ buttonPic.addEventListener('click', async (event) => {
     const DATE = picInputDate.value;
     const PIC_REQUEST_URL = `${PIC_BASE_URL}?api_key=${API_KEY}&date=${DATE}`
     let response = await axios.get(PIC_REQUEST_URL);
-    let sampleData = response.data;
-    console.log(sampleData)
     let pictureLink = response.data.hdurl;
     let pictureExplanation = response.data.explanation
     picContainer.innerHTML = `<img alt="NASA's picture of the day for ${DATE}" src="${pictureLink}"></img>
