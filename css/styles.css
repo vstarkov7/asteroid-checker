@@ -44,9 +44,12 @@ nav a{
   margin: 0 40px;
 }
 nav a:hover{
+  -moz-text-shadow: 2px 2px #3985B1;
+	-webkit-text-shadow: 2px 2px #3985B1;
+  text-shadow: 2px 2px #3985B1;
   /* color: black; */
   color: white;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 body {
   margin: 0;
@@ -57,6 +60,7 @@ body {
   background-color: #D5E8F6;
 }
 .explanation {
+  font-family: 'Alegreya Sans', sans-serif;
   text-align: justify;
   margin: 0 auto;
   width: 90%;
@@ -217,16 +221,19 @@ button:hover{
   margin-bottom: 20px;
 }
 
-.animation_test {
-  position: relative;
-  height: 1000px;
-  width: 100%;
-}
-.test_image {
+.flying_asteroid {
+  z-index: 3;
   position: absolute;
   top: 0;
-  right: 500;
+  right: 0;
 }
-.test_image img{
+#asteroid{
+  opacity: 0;
+}
+.flying_asteroid img{
   width: 200px;
+}
+.moon_ratio_number {
+  display: inline-block;
+  color: cyan;
 }

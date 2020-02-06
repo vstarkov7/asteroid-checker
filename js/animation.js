@@ -1,7 +1,7 @@
 function flyAsteroid() {
   let asteroid = document.getElementById("asteroid");
   let pos = 0;
-  let id = setInterval(frame, 2);
+  let id = setInterval(frame, 5);
   function frame() {
     if (pos == 3500) {
       clearInterval(id);
