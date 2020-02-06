@@ -12,7 +12,7 @@ header {
   display: flex;
   text-align: center;
   /* font-size: 32px; */
-  font-size: 4.5vh;
+  font-size: 4.5vw;
   font-weight: 600;
   flex-direction: column;
   align-items: center;
@@ -43,7 +43,7 @@ nav a{
   /* color: white; */
   text-decoration: none;
   /* font-size: 28px; */
-  font-size: 4vh;
+  font-size: 4vw;
   margin: 0 40px;
   line-height: 110%;
   text-align: center;
@@ -63,6 +63,14 @@ body {
   /* background-color: #95B8D1; */
   /* background-color: #B1DBF9; */
   background-color: #D5E8F6;
+}
+.input_date_error {
+  text-align: center;
+  color: red;
+  margin-top: -5px;
+  margin-top: -10px;
+  margin-bottom: 5px;
+  opacity: 0;
 }
 .explanation {
   font-family: 'Alegreya Sans', sans-serif;
@@ -116,7 +124,8 @@ body {
 }
 .specific_asteroid_info {
   /* font-family: 'Alegreya Sans', sans-serif; */
-  font-size: 2.3vh;
+  /* font-size: 2.3vw; */
+  font-size: 1em;
   text-align: left;
   font-family: 'Graduate', cursive;
   margin-bottom: 5px;
@@ -125,6 +134,8 @@ body {
   font-family: 'Alegreya Sans', sans-serif;
   margin-top: 20px;
   text-align: center;
+  /* font-size: 2.5vh; */
+  font-size: 1em;
 }
 .hazardous {
   display: inline-block;
@@ -136,8 +147,8 @@ body {
   text-align: center;
   margin: 0 auto;
   width: 60%;
-  /* font-size: 18px; */
-  font-size: 2.5vh;
+  font-size: 18px;
+  /* font-size: 2.5vh; */
   margin-bottom: 20px;
   padding-top: 20px;
 }
@@ -256,6 +267,9 @@ button:hover{
   }
 }
 @media (max-width: 480px) {
+  .flying_asteroid img{
+    width: 250px;
+  }
   .individual_asteroid_container {
     width: 60%;
   }

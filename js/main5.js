@@ -38,6 +38,14 @@ function flyAsteroid() {
     }
   }
 }
+function isValidDate(dateString) {
+  let regEx = /^\d{4}-\d{2}-\d{2}$/;
+  if (!dateString.match(regEx)) return false;  // Invalid format
+  let d = new Date(dateString);
+  let dNum = d.getTime();
+  if (!dNum && dNum !== 0) return false; // NaN value, Invalid date
+  return d.toISOString().slice(0, 10) === dateString;
+}
 const BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed?';
 const API_KEY = 'x2jCKgixJAakYYz6lUItiiDx4V8MZMvGR5SGzmNn'
 const START_DATE = '2018-12-12'
@@ -54,12 +62,17 @@ const asteroidInputDate = document.querySelector('#asteroid_input_date')
 
 buttonAsteroids.addEventListener('click', async (event) => {
   event.preventDefault()
+  const DATE = asteroidInputDate.value;
+  if (!isValidDate(DATE)) {
+    document.querySelector(".input_date_error").style.opacity = '1'
+    return
+  } else { document.querySelector(".input_date_error").style.opacity = '0' }
   try {
     console.log("opacity" + document.querySelector("#asteroid").style.opacity)
     if (document.querySelector("#asteroid").style.opacity === "0") {
       flyAsteroid();
     }
-    const DATE = asteroidInputDate.value;
+    // const DATE = asteroidInputDate.value;
     const ASTEROID_REQUEST_URL = `${ASTEROID_BASE_URL}start_date=${DATE}&end_date=${DATE}&api_key=${API_KEY}`
     let response = await axios.get(ASTEROID_REQUEST_URL);
     let sampleData = response.data;

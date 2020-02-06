@@ -51,12 +51,13 @@ buttonPic.addEventListener('click', async (event) => {
     console.log(sampleData)
     let pictureLink = response.data.hdurl;
     let pictureExplanation = response.data.explanation
-    picContainer.innerHTML = `<img alt="NASA's picture of the day for ${DATE}" src="${pictureLink}"></img>
+    picContainer.innerHTML = `<img id="pic_anchor" alt="NASA's picture of the day for ${DATE}" src="${pictureLink}"></img>
   <div class="explanation">${pictureExplanation}</div>`
   }
   catch (error) {
     console.log(error)
   }
+  goToPicAnchor()
 }
 );
 
