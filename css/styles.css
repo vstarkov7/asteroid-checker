@@ -11,10 +11,12 @@ header {
   color: white;
   display: flex;
   text-align: center;
-  font-size: 32px;
+  /* font-size: 32px; */
+  font-size: 4.5vh;
   font-weight: 600;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 }
 .main_title img {
   width: 20%;
@@ -40,8 +42,11 @@ nav a{
   /* color: rgb(227, 227, 227); */
   /* color: white; */
   text-decoration: none;
-  font-size: 28px;
+  /* font-size: 28px; */
+  font-size: 4vh;
   margin: 0 40px;
+  line-height: 110%;
+  text-align: center;
 }
 nav a:hover{
   -moz-text-shadow: 2px 2px #3985B1;
@@ -62,7 +67,7 @@ body {
 .explanation {
   font-family: 'Alegreya Sans', sans-serif;
   text-align: justify;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   width: 90%;
 }
 #pic_of_day_container {
@@ -111,6 +116,7 @@ body {
 }
 .specific_asteroid_info {
   /* font-family: 'Alegreya Sans', sans-serif; */
+  font-size: 2.3vh;
   text-align: left;
   font-family: 'Graduate', cursive;
   margin-bottom: 5px;
@@ -130,7 +136,8 @@ body {
   text-align: center;
   margin: 0 auto;
   width: 60%;
-  font-size: 18px;
+  /* font-size: 18px; */
+  font-size: 2.5vh;
   margin-bottom: 20px;
   padding-top: 20px;
 }
@@ -231,9 +238,31 @@ button:hover{
   opacity: 0;
 }
 .flying_asteroid img{
-  width: 200px;
+  width: 400px;
 }
 .moon_ratio_number {
   display: inline-block;
   color: cyan;
+}
+@media (max-width: 767px) {
+  .text_statistics {
+  margin-bottom: 20px;
+  }
+  .specific_asteroid_info {
+    text-align: center;
+  }
+  .individual_asteroid_container {
+    flex-flow: column;
+  }
+}
+@media (max-width: 480px) {
+  .individual_asteroid_container {
+    width: 60%;
+  }
+  .diameter_container img {
+    width: 70%;
+  }
+  .photo_caption {
+    width: 80%;
+  }
 }

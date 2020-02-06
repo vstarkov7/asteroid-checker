@@ -36,7 +36,9 @@ const PIC_BASE_URL = 'https://api.nasa.gov/planetary/apod'
 // const DATE = '2019-12-20'
 const picInputDate = document.querySelector("#pic_input_date")
 
-
+function goToPicAnchor() {
+  window.location = '#pic_anchor';
+}
 
 
 buttonPic.addEventListener('click', async (event) => {
