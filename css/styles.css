@@ -267,6 +267,9 @@ button:hover{
   }
 }
 @media (max-width: 480px) {
+  #pic_of_day_container img{
+    width: 100%;
+  }
   .flying_asteroid img{
     width: 250px;
   }
