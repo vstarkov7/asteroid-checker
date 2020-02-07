@@ -33,6 +33,23 @@ function isValidDate(dateString) {
   if (!dNum && dNum !== 0) return false; // NaN value, Invalid date
   return d.toISOString().slice(0, 10) === dateString;
 }
+function asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture) {
+  let hazardous_class = ''
+  if (hazardousValue == 'Potentially hazardous') hazardous_class = 'class="hazardous"'
+  asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
+        <div class="text_statistics">
+          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
+          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
+          </div>
+          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
+          <div class="specific_asteroid_info"><div>Danger Level:</div> <div ${hazardous_class}>${hazardousValue}</div>
+          </div>
+        </div>
+        <div class="diameter_container">
+        ${insertPicture}
+        </div>
+      </div>`
+}
 
 asteroidInput.addEventListener('keyup', function (event) {
   if (event.keyCode === 13) {
@@ -74,34 +91,11 @@ buttonAsteroids.addEventListener('click', async (event) => {
         if (hazardous) {
           hazardousValue = `Potentially hazardous`
 
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-            <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-            <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-            </div>
-            <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-            <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
-            </div>
-          </div>
-          <div class="diameter_container">
-          ${insertPicture}
-          </div>
-        </div>`      }
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
+        }
         else {
           hazardousValue = `Not hazardous`
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-            <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-            <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-            </div>
-            <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-            <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
-            </div>
-          </div>
-          <div class="diameter_container">
-            ${insertPicture}
-          </div>
-        </div>`
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
         }
       }
       else if (estArea > 7) {
@@ -112,34 +106,11 @@ buttonAsteroids.addEventListener('click', async (event) => {
         if (hazardous) {
           hazardousValue = `Potentially hazardous`
 
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-          ${insertPicture}
-          </div>
-        </div>`      }
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
+        }
         else {
           hazardousValue = `Not hazardous`
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-            ${insertPicture}
-          </div>
-        </div>`
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
         }
       }
       else if (estArea > 1) {
@@ -150,34 +121,11 @@ buttonAsteroids.addEventListener('click', async (event) => {
         if (hazardous) {
           hazardousValue = `Potentially hazardous`
 
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-          ${insertPicture}
-          </div>
-        </div>`      }
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
+        }
         else {
           hazardousValue = `Not hazardous`
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-            ${insertPicture}
-          </div>
-        </div>`
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
         }
       }
       else if (estArea > 0.05) {
@@ -188,34 +136,11 @@ buttonAsteroids.addEventListener('click', async (event) => {
         if (hazardous) {
           hazardousValue = `Potentially hazardous`
 
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-          ${insertPicture}
-          </div>
-        </div>`      }
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
+        }
         else {
           hazardousValue = `Not hazardous`
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-            ${insertPicture}
-          </div>
-        </div>`
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
         }
       }
       else if (estArea > 0.005351215104) {
@@ -226,34 +151,11 @@ buttonAsteroids.addEventListener('click', async (event) => {
         if (hazardous) {
           hazardousValue = `Potentially hazardous`
 
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-          ${insertPicture}
-          </div>
-        </div>`      }
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
+        }
         else {
           hazardousValue = `Not hazardous`
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-            ${insertPicture}
-          </div>
-        </div>`
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
         }
       }
       else if (estArea > 0.003) {
@@ -264,34 +166,12 @@ buttonAsteroids.addEventListener('click', async (event) => {
         if (hazardous) {
           hazardousValue = `Potentially hazardous`
 
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-          ${insertPicture}
-          </div>
-        </div>`      }
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
+        }
         else {
           hazardousValue = `Not hazardous`
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-            ${insertPicture}
-          </div>
-        </div>`
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
+
         }
       }
       else if (estArea > 0.0005) {
@@ -302,34 +182,11 @@ buttonAsteroids.addEventListener('click', async (event) => {
         if (hazardous) {
           hazardousValue = `Potentially hazardous`
 
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-          ${insertPicture}
-          </div>
-        </div>`      }
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
+        }
         else {
           hazardousValue = `Not hazardous`
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-            ${insertPicture}
-          </div>
-        </div>`
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
         }
       }
       else {
@@ -340,34 +197,11 @@ buttonAsteroids.addEventListener('click', async (event) => {
         if (hazardous) {
           hazardousValue = `Potentially hazardous`
 
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div class="hazardous">${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-          ${insertPicture}
-          </div>
-        </div>`      }
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
+        }
         else {
           hazardousValue = `Not hazardous`
-          asteroidContainer.innerHTML += `<div class="individual_asteroid_container">
-          <div class="text_statistics">
-          <div class="specific_asteroid_info"><div>Name:</div> <div>${name}</div></div>
-          <div class="specific_asteroid_info"><div>Avg Diameter:</div> <div>${diameterDisplay} km</div>
-          </div>
-          <div class="specific_asteroid_info"><div>Miss Distance:</div> <div>${distanceDisplay} km</div><div><div class="moon_ratio_number">${distanceMoonRatioDisplay}x</div> as far as the Moon</div></div>
-          <div class="specific_asteroid_info"><div>Danger Level:</div> <div>${hazardousValue}</div>
-          </div>
-          </div>
-          <div class="diameter_container">
-            ${insertPicture}
-          </div>
-        </div>`
+          asteroid_info(name, diameterDisplay, distanceDisplay, distanceMoonRatioDisplay, hazardousValue, insertPicture)
         }
       }
     }

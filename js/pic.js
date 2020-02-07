@@ -9,6 +9,14 @@ function goToPicAnchor() {
   window.location = '#pic_anchor';
 }
 
+function isValidDate(dateString) {
+  let regEx = /^\d{4}-\d{2}-\d{2}$/;
+  if (!dateString.match(regEx)) return false;  // Invalid format
+  let d = new Date(dateString);
+  let dNum = d.getTime();
+  if (!dNum && dNum !== 0) return false; // NaN value, Invalid date
+  return d.toISOString().slice(0, 10) === dateString;
+}
 
 picInput.addEventListener('keyup', function (event) {
   if (event.keyCode === 13) {
@@ -19,8 +27,13 @@ picInput.addEventListener('keyup', function (event) {
 
 buttonPic.addEventListener('click', async (event) => {
   event.preventDefault()
+  const DATE = picInputDate.value;
+  if (!isValidDate(DATE)) {
+    document.querySelector(".input_date_error").style.opacity = '1'
+    return
+  } else { document.querySelector(".input_date_error").style.opacity = '0' }
   try {
-    const DATE = picInputDate.value;
+    // const DATE = picInputDate.value;
     const PIC_REQUEST_URL = `${PIC_BASE_URL}?api_key=${API_KEY}&date=${DATE}`
     let response = await axios.get(PIC_REQUEST_URL);
     let pictureLink = response.data.hdurl;
